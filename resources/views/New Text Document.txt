@@ -1,0 +1,10 @@
+order-details
+
+payment-info
+
+search-products.blade
+
+seller-account
+shipping-data
+user-account
+usersAccount
