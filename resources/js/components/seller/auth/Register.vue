@@ -41,7 +41,7 @@
       		</div>
       		<div class="form-group col-md-3">
       			<label for="">البريد الالكتروني</label>
-      			<input type="text" class="form-control" id="" placeholder="البريد الالكتروني" v-model="form.email">
+      			<input type="email" class="form-control" id="" placeholder="البريد الالكتروني" v-model="form.email">
       		</div>
       		<div class="form-group col-md-3">
       			<label for="">اثبات الشخصية</label>
@@ -180,16 +180,17 @@ const mainAxios = window.axios.create({
 			 formData.append('shop_name', this.form.shop_name);
 			 formData.append('lat', 90);
 			 formData.append('lng', 89);
-			
+			 
 			mainAxios.post('/seller/authentication/register',formData,{
 				
 			}).then((response) => {
-				console.log(response)
+				 console.log(response)
 				swal({
 				title: "تم التسجيل بنجاح ",
-				text: "سوف يتم تأكيد حسابك من  قبل الأدارة",
+				text: `سوف يتم تأكيد حسابك من  قبل الأدارة  ..رقم تفعيل حسابك هو  ${response.data.activation_code}` ,
 				icon: "success",
 				});
+				window.location.href = `/seller/activation_code/${response.data.activation_code}`;
 			}).catch((message) => {
 				this.errors = message.response.data.errors
 				

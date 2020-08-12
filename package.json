@@ -24,6 +24,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "sweetalert": "^2.1.2"
+        "sweetalert": "^2.1.2",
+        "vue-upload-multiple-image": "^1.1.4",
+        "vue2-dropzone": "^3.6.0"
     }
 }

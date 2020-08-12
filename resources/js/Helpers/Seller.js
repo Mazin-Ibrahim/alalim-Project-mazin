@@ -12,8 +12,9 @@ class Seller {
 	login(data){
 		mainAxios.post('/seller/authentication/login',data).then((response) =>{
                  // /Token.payload(response.data.token)
+                  console.log(response)
                  this.responseAfterLogin(response)
-                 // console.log(response.data.seller.full_name)
+                  window.location.href = "/seller/profile";
 			}).catch((message) =>{
 				// console.log(message.data)
 			})
@@ -54,6 +55,10 @@ class Seller {
 			const payload = Token.payload(AppStorage.getToken())
 			return payload.sub
 		}
+	}
+
+	getToken(){
+		return AppStorage.getToken()
 	}
 
 

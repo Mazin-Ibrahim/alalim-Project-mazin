@@ -11,7 +11,7 @@ window.Vue = require('vue');
 import Seller from './Helpers/Seller'
 window.Seller = Seller
 
-console.log(Seller.sellerId())
+// console.log(Seller.sellerId())
 
     // For common config
     
@@ -20,8 +20,15 @@ console.log(Seller.sellerId())
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 
-Vue.component('Register', require('./components/seller/Register.vue').default);
-Vue.component('Login', require('./components/seller/Login.vue').default);
+Vue.component('Register', require('./components/seller/auth/Register.vue').default);
+Vue.component('Login', require('./components/seller/auth/Login.vue').default);
+Vue.component('active-code', require('./components/seller/auth/ActiveCode.vue').default);
+
+Vue.component('Profile', require('./components/seller/Profile.vue').default);
+
+Vue.component('add-product', require('./components/seller/product/AddProduct.vue').default);
+Vue.component('Products', require('./components/seller/product/Products.vue').default);
+
 
 
 

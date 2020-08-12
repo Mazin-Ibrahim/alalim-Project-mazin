@@ -91,3 +91,7 @@ Route::post('createUser', 'UserAccountController@store');
 
 Route::get('/seller/register','seller\SellersController@register');
 Route::get('/seller/login','seller\SellersController@login');
+Route::get('/seller/profile','seller\SellersController@profile');
+Route::get('/seller/activation_code/{code}','seller\SellersController@activation_code');
+
+Route::get('/seller/add-product','product\ProductsController@addProduct');

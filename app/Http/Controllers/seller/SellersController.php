@@ -18,4 +18,15 @@ class SellersController extends Controller
     {
     	return view('seller.auth.login');
     }
+
+    public function profile()
+    {
+    	return view('seller.profile');
+    }
+
+    public function activation_code($code)
+    {  
+           
+            return view('seller.auth.activation_code')->withCode($code);
+    }
 }
