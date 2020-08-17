@@ -1,7 +1,6 @@
 <template>
-	<div dir="rtl" class="wrapper" style="padding-right:10rem;padding-left:10rem; margin:8rem;">
+	<div dir="rtl" class="wrapper" style="margin:8rem;">
 		<div class="container">
-
 			<div class="row">
 				<div class="col-md-6 col-md-offset-2 shadow-md rounded p-4">
 					<div class="form-group">
@@ -41,7 +40,7 @@ export default {
 	methods:{
 
 		login(){
-			Seller.login(this.form)
+			User.login(this.form)
 		}
 	}
 }

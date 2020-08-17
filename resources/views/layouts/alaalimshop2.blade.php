@@ -18,8 +18,7 @@
   <!-- page1 -->
 
   <link rel="stylesheet" href="{{ asset('css/pe-icon-7-stroke.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
-
+   <link rel="stylesheet" href="{{ asset('css/tailwind.css') }}">
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
   <!-- Icon Fonts  -->
@@ -45,7 +44,8 @@
 
   <!-- Modernizr -->
   <script src="{{ asset('vendor/modernizr/modernizr.js') }}"></script>
-  
+  <script  src="{{ asset('js/app.js') }}" async defer></script>
+
 
 </head>
 <body class="rtl" style="font-family: 'Cairo', sans-serif;">

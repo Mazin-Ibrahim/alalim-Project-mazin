@@ -1,4 +1,4 @@
-@extends('layouts.alaalimshop')
+@extends('layouts.alaalimshop2')
 @section('content')
 
 <Profile></Profile>

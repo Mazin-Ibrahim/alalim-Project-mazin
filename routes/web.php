@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,9 @@ Route::get('/user', function () {
 });
 Route::get('/index', function () { 
     return view('index');
+});
+Route::get('/about-us', function () { 
+    return view('about-us');
 });
 Route::get('/wish-list', function () {
     return view('wish-list');
@@ -86,12 +90,28 @@ Route::post('createUser', 'UserAccountController@store');
 
 
 
+Route::get('/page/login',function(){
+ return view('page.login');
+});
 
+Route::get('/page/register',function(){
+ return view('page.register');
+});
 
 
 Route::get('/seller/register','seller\SellersController@register');
 Route::get('/seller/login','seller\SellersController@login');
 Route::get('/seller/profile','seller\SellersController@profile');
 Route::get('/seller/activation_code/{code}','seller\SellersController@activation_code');
-
 Route::get('/seller/add-product','product\ProductsController@addProduct');
+Route::get('/seller/edit-product/{id}','product\ProductsController@editProduct');
+Route::get('/seller/products','product\ProductsController@products');
+
+
+
+
+
+
+
+Route::get('/user/register','user\UsersController@register');
+Route::get('/user/login','user\UsersController@login');

@@ -8,21 +8,19 @@
 				<div class="container">
 					<ol class="breadcrumb breadcrumb--wd pull-left">
 						<li><a href="index.html">الرئيسية</a></li>
-						<li class="active"> انشاء حساب تاجر</li>
+						<li class="active"> انشاء حساب  مستخدم</li>
 					</ol>
-				<!-- <ul id="productOther" class="product-other pull-right hidden-xs">
-					<li class="product-other__link product-prev"><a href="#">تشيرت أسود بأكمام طويلة</a><span class="product-other__link__image"><img src='images/products/product-4.jpg'/></span></li>
-					<li class="product-other__link product-next"><a href="#">فستان أبيض</a><span class="product-other__link__image"><img src='images/products/product-3.jpg'/></span></li>
-				</ul> -->
+			
 			</div>
 		</section>
 		<!-- Content section -->
 
 		<section class="content  ">
 			<div class="container">
-				<div class="text-center"></div>
+				<div class="text-center"> </div>
 				<div class="divider divider--sm"></div>
-        <div class="row">
+
+				<div class="row">
 					<div class="col-md-5">
 						<div class="alert alert-danger" role="alert" v-if="errors.full_name">
                              ابرجاء أدخال الاسم رباعي
@@ -39,16 +37,8 @@
                                االرجاء أدخال أسم البلد
                          </div>
 
-                         <div class="alert alert-danger" role="alert" v-if="errors.country">
-                               االرجاء أدخال أسم البلد
-                         </div>
-
-                         <div class="alert alert-danger" role="alert" v-if="errors.shop_name">
-                               االرجاء أدخال أسم المتجر
-                         </div>
-
-                         <div class="alert alert-danger" role="alert" v-if="errors.shop_image">
-                               االرجاء أدخال صورة للمتجر
+                         <div class="alert alert-danger" role="alert" v-if="errors.password">
+                               االرجاء أدخال كلمة المرور
                          </div>
                           <div class="alert alert-danger" role="alert" v-if="errors.state">
                                الرجاء أدخال الولاية
@@ -59,8 +49,9 @@
                          </div>
 					   </div>
 				</div>
+       
 
-  <form @submit.prevent="onSubmit" enctype="multipart/form-data">
+
       	<div class="form-row">
       		<div class="form-group col-md-3">
       			<span  v-if="errors.full_name">يجب أداخل الاسم</span>
@@ -78,7 +69,7 @@
       		</div>
       		<div class="form-group col-md-3">
       			<label for="">اثبات الشخصية</label>
-      			<input type="file" class="form-control" ref="identity" @change="onUploadIdentity()">
+      			<input type="text" class="form-control" v-model="form.identity" placeholder="أثبات شخصية">
       		</div>
 
       	</div>
@@ -90,10 +81,7 @@
       		</div>
       		<div class="form-group col-md-3">
       			<label for="inputState">المحافظة</label>
-      			<!-- <select id="inputState" class="form-control">
-      				<option selected>اختار...</option>
-      				<option>...</option>
-      			</select> -->
+      			
 				  <input type="text" class="form-control" name="" id="" v-model="form.state">
       		</div>
       		
@@ -104,15 +92,8 @@
       	</div>
 
       	<div class="form-row">
-      		<div class="form-group col-md-6">
-      			<label for="">اسم المتجر</label>
-      			<input type="text" class="form-control" id="" placeholder="اسم المتجر" v-model="form.shop_name">
-      		</div>
-      		<div class="form-group col-md-3">
-      			<label for="">صورة المتجر</label>
-      			<input type="file" class="form-control"   id="file" ref="shop_image"  @change="onFileSelected()">
-				
-      		</div>
+      	
+      		
       		<div class="form-group col-md-3">
       			<label for="">اسم المستخدم</label>
       			<input type="text" class="form-control" id="" placeholder="اسم المستخدم" v-model="form.username">
@@ -128,19 +109,15 @@
       			<input type="password" class="form-control" id="" placeholder="كلمة السر" v-model="form.password">
       		</div>
 
-      		<div class="form-group col-md-3">
-      			<label for="">تأكيد كلمة السر</label>
-      			<input type="password" class="form-control" id="" placeholder="تأكيد كلمة السر" v-model="form.confirmPassword"> 
-      		</div>
       		<div class="my-products-edits form-group col-md-3">
-      			<button type="submit" class="btn btn-primary edit" style="margin: 23px 0;">اضافة</button>
+      			<button v-on:click="addUser" class="btn btn-primary edit" style="margin: 23px 0;">اضافة</button>
       		</div>
 
 
       	</div>
 
 
-  </form>
+
 
   </div>
 </section>
@@ -175,12 +152,7 @@ const mainAxios = window.axios.create({
 				city:'',
 				username:'',
 				password:'',
-				confirmPassword:'',
-				shop_name:'',
 				identity:'',
-				lat:90,
-				lng:89,
-				shop_image:'',
 				
 			},
 			errors:[]
@@ -191,42 +163,18 @@ const mainAxios = window.axios.create({
 	
 	methods:{
 
-			onFileSelected () {
-			this.form.shop_image = this.$refs.shop_image.files[0];
-			},
-			onUploadIdentity(){
-               this.form.identity = this.$refs.identity.files[0];
-			},
-
-		onSubmit(){
-			let formData = new FormData();
-			 formData.append('shop_image', this.form.shop_image);
-			 formData.append('identity', this.form.identity);
-			 formData.append('full_name', this.form.full_name);
-			 formData.append('phone_number', this.form.phone_number);
-			 formData.append('email', this.form.email);
-			 formData.append('country', this.form.country);
-			 formData.append('state', this.form.state);
-			 formData.append('city', this.form.city);
-			 formData.append('username', this.form.username);
-			 formData.append('password', this.form.password);
-			 formData.append('shop_name', this.form.shop_name);
-			 formData.append('lat', 90);
-			 formData.append('lng', 89);
-			 
-			mainAxios.post('/seller/authentication/register',formData,{
-				
-			}).then((response) => {
-				 console.log(response)
+		addUser(){
+		
+			mainAxios.post('/user/authentication/register',this.form)
+			.then((res) =>{
 				swal({
 				title: "تم التسجيل بنجاح ",
-				text: `سوف يتم تأكيد حسابك من  قبل الأدارة  ..رقم تفعيل حسابك هو  ${response.data.activation_code}` ,
+				text: `سوف يتم تأكيد حسابك من  قبل الأدارة  ` ,
 				icon: "success",
 				});
-				window.location.href = `/seller/activation_code/${response.data.activation_code}`;
 			}).catch((message) => {
-				this.errors = message.response.data.errors
-				
+               this.errors = message.response.data.errors
+               console.log(this.errors.city[0])
 			})
 		}
 	}

@@ -1,7 +1,8 @@
 @extends('layouts.alaalimshop2')
 @section('content')
 
-<add-product></add-product>
+<user-register
+></user-register>
 
 
 @endsection

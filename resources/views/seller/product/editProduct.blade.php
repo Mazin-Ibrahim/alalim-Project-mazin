@@ -1,7 +1,8 @@
 @extends('layouts.alaalimshop2')
 @section('content')
 
-<add-product></add-product>
+
+<edit-product :product_id={{ $id }}></edit-product>
 
 
 @endsection

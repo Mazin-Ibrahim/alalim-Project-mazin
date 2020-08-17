@@ -11,4 +11,16 @@ class ProductsController extends Controller
     {
        return view('seller.product.addProduct');
     }
+
+    public function products()
+    {
+    	return view('seller.product.products');
+    }
+
+    public function editProduct($id)
+    {
+    	
+    	return view('seller.product.editProduct')->withId($id);
+    }
+    
 }

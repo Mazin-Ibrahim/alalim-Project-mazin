@@ -11,6 +11,9 @@ window.Vue = require('vue');
 import Seller from './Helpers/Seller'
 window.Seller = Seller
 
+import User from './Helpers/User'
+window.User = User
+
 // console.log(Seller.sellerId())
 
     // For common config
@@ -28,6 +31,12 @@ Vue.component('Profile', require('./components/seller/Profile.vue').default);
 
 Vue.component('add-product', require('./components/seller/product/AddProduct.vue').default);
 Vue.component('Products', require('./components/seller/product/Products.vue').default);
+Vue.component('edit-product', require('./components/seller/product/EditProduct.vue').default);
+
+
+
+Vue.component('user-register', require('./components/user/auth/Register.vue').default);
+Vue.component('user-login', require('./components/user/auth/Login.vue').default);
 
 
 
