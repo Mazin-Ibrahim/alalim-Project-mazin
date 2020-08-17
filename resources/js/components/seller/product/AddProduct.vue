@@ -5,14 +5,18 @@
 	
 				<form @submit.prevent="onSubmit" enctype="multipart/form-data">
 					<div class="row">
+				
 						<div class="col-md-4">
 							<div class="form-group">
 						<label for="inputState">التصنيفات</label>
-						<select id="inputState" class="form-control" v-model="form.category_id">
+						<select id="inputState" class="form-control" v-model="form.category_id" @change="getCountImage($event)">
 							<option  v-for="category in categories" :value="category.id">
 								{{ category.title }}
 							</option>
 						</select>
+					</div>
+					<div col="col-md-4 col-md-offset-2" v-if="numberOfImage">
+					   <p class="alert alert-info">يجب أدخال {{ numberOfImage }} صور  لهذا المنتج</p>
 					</div>
 						</div>
 					</div>
@@ -30,7 +34,7 @@
 
 					<div class="form-group col-md-4">
 						<label for="inputState">صور المنتج</label>
-						<input type="file" ref="images" @change="onFileSelected" class="form-control" multiple>
+						<input type="file" ref="images" @change="onFileSelected()" class="form-control" multiple>
 					</div>
 				
 					</div>
@@ -76,6 +80,8 @@ export default {
 	data(){
 		return{
 			categories:[],
+			countsImage:[],
+			numberOfImage:'',
 			form:{
 				category_id:'',
 				title:'',
@@ -160,6 +166,16 @@ export default {
 			}).catch((err) => {
 				alert("nooo")
 			})
+		},
+		getCountImage(event){
+			console.log(event.target)
+	      for(let i = 0;i< this.categories.length;i++){
+					if(event.target.value == this.categories[i].id){
+				this.numberOfImage = this.categories[i].products_images_count
+          
+					}
+				}
+				// console.log(this.numberOfImage)
 		}
 	}
 }

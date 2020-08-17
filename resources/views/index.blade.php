@@ -1,4 +1,4 @@
-@extends('layouts.alaalimshop')
+@extends('layouts.alaalimshop2')
 
 @section('content')
 <div id="pageContent" class="page-content">
@@ -462,96 +462,9 @@
   <div class="container">
     <h2 class="text-center text-uppercase">تصنيفات المنتجات</h2>
     <div class="product-category-carousel mobile-special-arrows animated-arrows slick">
-      <div class="product-category hover-squared text-center"> <a href="#"><img src="images/category-empty.png" data-lazy="images/category-img-01.png" alt="#"></a>
-        <div class="product-category__hover caption"></div>
-        <div class="product-category__info">
-          <div class="product-category__info__ribbon">
-            <h5 class="product-category__info__ribbon__title">بدل رجالية</h5>
-            <div class="product-category__info__ribbon__count">32 منتج</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-category hover-squared"> <a href="#"><img src="images/category-empty.png" data-lazy="images/category-img-01.png" alt="#"></a>
-        <div class="product-category__hover caption"></div>
-        <div class="product-category__info">
-          <div class="product-category__info__ribbon">
-            <h5 class="product-category__info__ribbon__title">ملابس أطفال</h5>
-            <div class="product-category__info__ribbon__count">589 منتج</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-category hover-squared"> <a href="#"><img src="images/category-empty.png" data-lazy="images/category-img-01.png" alt="#"></a>
-        <div class="product-category__hover caption"></div>
-        <div class="product-category__info">
-          <div class="product-category__info__ribbon">
-            <h5 class="product-category__info__ribbon__title">الكترونيات</h5>
-            <div class="product-category__info__ribbon__count">227 منتج</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-category hover-squared"> <a href="#"><img src="images/category-empty.png" data-lazy="images/category-img-01.png" alt="#"></a>
-        <div class="product-category__hover caption"></div>
-        <div class="product-category__info">
-          <div class="product-category__info__ribbon">
-            <h5 class="product-category__info__ribbon__title">سيارات</h5>
-            <div class="product-category__info__ribbon__count">70 منتج</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-category hover-squared"> <a href="#"><img src="images/category-empty.png" data-lazy="images/category-img-01.png" alt="#"></a>
-        <div class="product-category__hover caption"></div>
-        <div class="product-category__info">
-          <div class="product-category__info__ribbon">
-            <h5 class="product-category__info__ribbon__title">اكسسوارات</h5>
-            <div class="product-category__info__ribbon__count">50 منتج</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-category hover-squared"> <a href="#"><img src="images/category-empty.png" data-lazy="images/category-img-01.png" alt="#"></a>
-        <div class="product-category__hover caption"></div>
-        <div class="product-category__info">
-          <div class="product-category__info__ribbon">
-            <h5 class="product-category__info__ribbon__title">أحذية</h5>
-            <div class="product-category__info__ribbon__count">100 منتج</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-category hover-squared"> <a href="#"><img src="images/category-empty.png" data-lazy="images/category-img-01.png" alt="#"></a>
-        <div class="product-category__hover caption"></div>
-        <div class="product-category__info">
-          <div class="product-category__info__ribbon">
-            <h5 class="product-category__info__ribbon__title">ملابس</h5>
-            <div class="product-category__info__ribbon__count">800 منتج</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-category hover-squared"> <a href="#"><img src="images/category-empty.png" data-lazy="images/category-img-01.png" alt="#"></a>
-        <div class="product-category__hover caption"></div>
-        <div class="product-category__info">
-          <div class="product-category__info__ribbon">
-            <h5 class="product-category__info__ribbon__title">ساعات</h5>
-            <div class="product-category__info__ribbon__count">55 منتج</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-category hover-squared"> <a href="#"><img src="images/category-empty.png" data-lazy="images/category-img-01.png" alt="#"></a>
-        <div class="product-category__hover caption"></div>
-        <div class="product-category__info">
-          <div class="product-category__info__ribbon">
-            <h5 class="product-category__info__ribbon__title">أدوات منزلية</h5>
-            <div class="product-category__info__ribbon__count">647 منتج</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-category hover-squared"> <a href="#"><img src="images/category-empty.png" data-lazy="images/category-img-01.png" alt="#"></a>
-        <div class="product-category__hover caption"></div>
-        <div class="product-category__info">
-          <div class="product-category__info__ribbon">
-            <h5 class="product-category__info__ribbon__title">أخرى</h5>
-            <div class="product-category__info__ribbon__count">100 منتج</div>
-          </div>
-        </div>
-      </div>
+            
+       <Categories></Categories>
+
     </div>
   </div>
 </section>
@@ -1133,5 +1046,4 @@
 <!-- End Content section -->
 
 </div>
-
 @endsection

@@ -39,6 +39,9 @@ Vue.component('user-register', require('./components/user/auth/Register.vue').de
 Vue.component('user-login', require('./components/user/auth/Login.vue').default);
 
 
+Vue.component('Categories', require('./components/Category/Categories.vue').default);
+
+
 
 
 const app = new Vue({
