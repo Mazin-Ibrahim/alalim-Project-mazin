@@ -103,9 +103,14 @@ Route::get('/seller/register','seller\SellersController@register');
 Route::get('/seller/login','seller\SellersController@login');
 Route::get('/seller/profile','seller\SellersController@profile');
 Route::get('/seller/activation_code/{code}','seller\SellersController@activation_code');
+
+Route::get('seller/store', 'seller\SellersController@store');
+Route::get('seller/order', 'seller\SellersController@order');
+
 Route::get('/seller/add-product','product\ProductsController@addProduct');
 Route::get('/seller/edit-product/{id}','product\ProductsController@editProduct');
 Route::get('/seller/products','product\ProductsController@products');
+
 
 
 

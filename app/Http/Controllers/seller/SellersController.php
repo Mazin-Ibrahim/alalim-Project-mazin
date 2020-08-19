@@ -29,4 +29,14 @@ class SellersController extends Controller
            
             return view('seller.auth.activation_code')->withCode($code);
     }
+
+    public function store()
+    {
+        return view('seller.store.store');
+    }
+
+    public function order()
+    {
+        return view('seller.order.order');
+    }
 }

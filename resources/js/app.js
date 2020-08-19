@@ -11,6 +11,7 @@ window.Vue = require('vue');
 import Seller from './Helpers/Seller'
 window.Seller = Seller
 
+
 import User from './Helpers/User'
 window.User = User
 
@@ -32,6 +33,10 @@ Vue.component('Profile', require('./components/seller/Profile.vue').default);
 Vue.component('add-product', require('./components/seller/product/AddProduct.vue').default);
 Vue.component('Products', require('./components/seller/product/Products.vue').default);
 Vue.component('edit-product', require('./components/seller/product/EditProduct.vue').default);
+
+Vue.component('Store', require('./components/seller/store/Store.vue').default);
+
+Vue.component('Orders', require('./components/seller/order/Orders.vue').default);
 
 
 
