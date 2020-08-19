@@ -2575,93 +2575,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var mainAxios = window.axios.create({
@@ -2671,7 +2584,8 @@ var mainAxios = window.axios.create({
   data: function data() {
     return {
       orders: [],
-      ourOrders: []
+      ourOrders: [],
+      products: []
     };
   },
   created: function created() {
@@ -2689,12 +2603,11 @@ var mainAxios = window.axios.create({
         _this.orders = response.data;
 
         for (var i = 0; i < _this.orders.data.length; i++) {
-          if (_this.orders.data[i].seller_id == 32) {
+          if (_this.orders.data[i].seller_id == 31) {
             _this.ourOrders.push(_this.orders.data[i]);
           }
         }
 
-        console.log(_this.orders.data);
         console.log(_this.ourOrders);
       })["catch"](function (err) {
         alert("nooo");
@@ -3033,6 +2946,14 @@ var mainAxios = window.axios.create({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -40077,183 +39998,108 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "div",
+      { attrs: { id: "pageContent" } },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._l(_vm.ourOrders, function(order, index) {
+          return _c("section", { staticClass: "content" }, [
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "row product-info-outer my-orders" }, [
+                _vm._m(1, true),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-sm-8 col-md-8 col-lg-7" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "details" }, [
+                      order.products[1]
+                        ? _c("span", [
+                            _vm._v(_vm._s(order.products[1].product.title))
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      !order.products[1]
+                        ? _c("span", [_vm._v("لا يوجد")])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "details-l" }, [
+                        _vm._v(_vm._s(order.total))
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "details" }, [
+                      _c("span", [_vm._v("التاريخ")]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "details-l" }, [
+                        _vm._v(_vm._s(order.created_at))
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("span", { staticClass: "details-list" }, [
+                      _vm._v(
+                        "\n                  " +
+                          _vm._s(order.status) +
+                          "\n              "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(2, true)
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "divider divider--xs product-info__divider"
+              })
+            ])
+          ])
+        })
+      ],
+      2
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { attrs: { id: "pageContent" } }, [
-        _c("section", { staticClass: "breadcrumbs breadcrumbs-boxed" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("ol", { staticClass: "breadcrumb breadcrumb--wd pull-left" }, [
-              _c("li", [
-                _c("a", { attrs: { href: "index.html" } }, [_vm._v("الرئيسية")])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "active" }, [_vm._v(" طلباتي")])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("section", { staticClass: "content" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "row product-info-outer my-orders" }, [
-              _c("div", { staticClass: "col-sm-4 col-md-4 col-lg-5" }, [
-                _c("img", {
-                  attrs: { src: "images/wd-present-01.jpg", alt: "" }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-8 col-md-8 col-lg-7" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "details" }, [
-                    _c("span", [_vm._v("سامسونج")]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "details-l" }, [_vm._v("5000")])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "details" }, [
-                    _c("span", [_vm._v("التاريخ")]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "details-l" }, [
-                      _vm._v("14/7/2020")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("span", { staticClass: "details-list" }, [
-                    _vm._v("\n                  الحالة\n              ")
-                  ]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "details-list" }, [
-                    _c("a", { attrs: { href: "order details.html" } }, [
-                      _vm._v("تصفح")
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", {
-              staticClass: "divider divider--xs product-info__divider"
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("section", { staticClass: "content" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "row product-info-outer my-orders" }, [
-              _c("div", { staticClass: "col-sm-4 col-md-4 col-lg-5" }, [
-                _c("img", {
-                  attrs: { src: "images/wd-present-02.jpg", alt: "" }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-8 col-md-8 col-lg-7" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "details" }, [
-                    _c("span", [_vm._v("ساعة أبل")]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "details-l" }, [_vm._v("5000")])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "details" }, [
-                    _c("span", [_vm._v("التاريخ")]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "details-l" }, [
-                      _vm._v("14/7/2020")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("span", { staticClass: "details-list" }, [
-                    _vm._v("\n                  الحالة\n              ")
-                  ]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "details-list" }, [
-                    _c("a", { attrs: { href: "order details.html" } }, [
-                      _vm._v("تصفح")
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", {
-              staticClass: "divider divider--xs product-info__divider"
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("section", { staticClass: "content" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "row product-info-outer my-orders" }, [
-              _c("div", { staticClass: "col-sm-4 col-md-4 col-lg-5" }, [
-                _c("img", {
-                  attrs: { src: "images/wd-present-01.jpg", alt: "" }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-8 col-md-8 col-lg-7" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "details" }, [
-                    _c("span", [_vm._v("هاواواي")]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "details-l" }, [_vm._v("5000")])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "details" }, [
-                    _c("span", [_vm._v("التاريخ")]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "details-l" }, [
-                      _vm._v("14/7/2020")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("span", { staticClass: "details-list" }, [
-                    _vm._v("\n                  الحالة\n              ")
-                  ]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "details-list" }, [
-                    _c("a", { attrs: { href: "order details.html" } }, [
-                      _vm._v("تصفح")
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", {
-              staticClass: "divider divider--xs product-info__divider"
-            })
-          ])
+    return _c("section", { staticClass: "breadcrumbs breadcrumbs-boxed" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("ol", { staticClass: "breadcrumb breadcrumb--wd pull-left" }, [
+          _c("li", [
+            _c("a", { attrs: { href: "index.html" } }, [_vm._v("الرئيسية")])
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "active" }, [_vm._v(" طلباتي")])
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-4 col-md-4 col-lg-5" }, [
+      _c("img", { attrs: { src: "images/wd-present-01.jpg", alt: "" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "details-list" }, [
+      _c("a", { attrs: { href: "order details.html" } }, [_vm._v("تصفح")])
     ])
   }
 ]
@@ -40840,14 +40686,12 @@ var render = function() {
                   ])
                 ]
               )
-            ]),
-            _vm._v(" "),
-            _c("div", {
-              staticClass: "divider divider--xs product-info__divider"
-            })
+            ])
           ])
         ])
-      })
+      }),
+      _vm._v(" "),
+      _vm._m(4)
     ],
     2
   )
@@ -40902,6 +40746,36 @@ var staticRenderFns = [
         _c("p", { staticClass: "app-style-value" }, [_vm._v("200")])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "divider divider--xs product-info__divider" },
+      [
+        _c("div", { staticClass: "my-products-edits text-center -mb-16" }, [
+          _c(
+            "button",
+            { staticClass: "btn btn-primary edit", attrs: { type: "button" } },
+            [_vm._v("تعديل")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-primary del", attrs: { type: "button" } },
+            [_vm._v("حذف")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-primary cir", attrs: { type: "button" } },
+            [_vm._v("+")]
+          )
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -54523,15 +54397,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************!*\
   !*** ./resources/js/components/seller/order/Orders.vue ***!
   \*********************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Orders_vue_vue_type_template_id_1727987b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Orders.vue?vue&type=template&id=1727987b& */ "./resources/js/components/seller/order/Orders.vue?vue&type=template&id=1727987b&");
 /* harmony import */ var _Orders_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Orders.vue?vue&type=script&lang=js& */ "./resources/js/components/seller/order/Orders.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Orders_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Orders_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -54561,7 +54434,7 @@ component.options.__file = "resources/js/components/seller/order/Orders.vue"
 /*!**********************************************************************************!*\
   !*** ./resources/js/components/seller/order/Orders.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55005,8 +54878,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! F:\vue-project\new-f\alalim-Project-mazin\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! F:\vue-project\new-f\alalim-Project-mazin\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\odey abdalrahman\Desktop\new\alalim-Project-mazin\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\odey abdalrahman\Desktop\new\alalim-Project-mazin\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -79,12 +79,20 @@
 
           </div>
       </div>
-          <div class="divider divider--xs product-info__divider"></div>
+          
     </div>
     </section>
 
 
+      <div class="divider divider--xs product-info__divider">
+          
 
+          <div class="my-products-edits text-center -mb-16">
+            <button type="button" class="btn btn-primary edit">تعديل</button>
+            <button type="button" class="btn btn-primary del">حذف</button>
+            <button type="button" class="btn btn-primary cir">+</button>
+          </div>
+          </div>
     <!-- Content section -->
   
   </div>
