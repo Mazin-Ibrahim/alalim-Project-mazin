@@ -39,4 +39,9 @@ class SellersController extends Controller
     {
         return view('seller.order.order');
     }
+
+     public function orderDetails()
+    {
+        return view('seller.order.orderDetails');
+    }
 }

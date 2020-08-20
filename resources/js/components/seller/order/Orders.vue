@@ -4,7 +4,8 @@
 		<div id="pageContent">
 
     <!-- Breadcrumb section -->
-
+     <order-details :orders="orders" v-if="openOrderDetailsComponent"></order-details> 
+    <div v-if="openOrderComponent">
     <section class="breadcrumbs breadcrumbs-boxed">
       <div class="container"> 
         <ol class="breadcrumb breadcrumb--wd pull-left">
@@ -48,7 +49,7 @@
                   {{ order.status }}
               </span>
               <span class="details-list">
-                  <a href="order details.html">تصفح</a>
+                  <button @click="orderDetalis(order)">التفاصيل</button>
               </span>
             </div>
 
@@ -65,9 +66,11 @@
     
   </div>
 	</div>
-
+</div>
 </template>
 <script type="text/javascript">
+
+
 window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -80,7 +83,11 @@ const mainAxios = window.axios.create({
 			return {
 				orders:[],
         ourOrders:[],
-        products:[]
+        products:[],
+        openOrderDetailsComponent:false,
+        openOrderComponent:true,
+        openOrder:true,
+        orders:[]
 			}
 		},
     created(){
@@ -109,6 +116,13 @@ const mainAxios = window.axios.create({
         alert("nooo")
       })
 			},
+
+      orderDetalis(order){
+          this.orders = order
+          this.openOrderDetailsComponent = true
+          this.openOrderComponent = false
+
+      },
 		},
 	}
 </script>

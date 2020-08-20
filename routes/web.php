@@ -106,6 +106,7 @@ Route::get('/seller/activation_code/{code}','seller\SellersController@activation
 
 Route::get('seller/store', 'seller\SellersController@store');
 Route::get('seller/order', 'seller\SellersController@order');
+Route::get('seller/order/details', 'seller\SellersController@orderDetails');
 
 Route::get('/seller/add-product','product\ProductsController@addProduct');
 Route::get('/seller/edit-product/{id}','product\ProductsController@editProduct');
